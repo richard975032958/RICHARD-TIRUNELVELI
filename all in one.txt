@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard P | HR Executive Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#050816,#0a192f,#111827);
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:fixed;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+background:
+radial-gradient(circle,#22c55e22 1px,transparent 1px);
+background-size:40px 40px;
+animation:bgmove 25s linear infinite;
+z-index:-1;
+}
+
+@keyframes bgmove{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* Header */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:18px;
+background:rgba(17,24,39,.8);
+backdrop-filter:blur(15px);
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,.4);
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:#fff;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#22c55e;
+text-shadow:0 0 20px #22c55e;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:250px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #22c55e;
+box-shadow:
+0 0 30px #22c55e,
+0 0 60px #22c55e;
+animation:float 4s ease-in-out infinite;
+transition:.5s;
+}
+
+.hero img:hover{
+transform:scale(1.05) rotateY(15deg);
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+.hero h1{
+font-size:70px;
+margin-top:20px;
+text-shadow:0 0 25px #22c55e;
+}
+
+.hero p{
+font-size:22px;
+margin-top:10px;
+color:#22c55e;
+}
+
+/* 3D Button */
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:linear-gradient(45deg,#22c55e,#16a34a);
+color:white;
+text-decoration:none;
+font-weight:600;
+border-radius:50px;
+box-shadow:
+0 8px 0 #15803d,
+0 15px 30px rgba(0,0,0,.4);
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-8px);
+box-shadow:
+0 15px 0 #15803d,
+0 25px 40px rgba(34,197,94,.5);
+}
+
+.btn:active{
+transform:translateY(5px);
+box-shadow:none;
+}
+
+/* Sections */
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:40px;
+color:#22c55e;
+text-shadow:0 0 20px #22c55e;
+}
+
+/* Cards */
+
+.card,
+.gallery-card,
+.skill{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+padding:25px;
+transition:.5s;
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.card:hover,
+.gallery-card:hover,
+.skill:hover{
+transform:
+translateY(-12px)
+rotateX(8deg)
+rotateY(8deg);
+box-shadow:
+0 25px 50px rgba(34,197,94,.3);
+}
+
+.card::before,
+.gallery-card::before,
+.skill::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle,
+rgba(34,197,94,.2),
+transparent 70%);
+opacity:0;
+transition:.5s;
+}
+
+.card:hover::before,
+.gallery-card:hover::before,
+.skill:hover::before{
+opacity:1;
+}
+
+/* Skills */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.skill{
+text-align:center;
+font-weight:600;
+cursor:pointer;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.5s;
+}
+
+.gallery-card:hover img{
+transform:scale(1.1);
+}
+
+/* Contact */
+
+.contact-links a{
+color:#22c55e;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Footer */
+
+footer{
+padding:25px;
+text-align:center;
+background:#111827;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero img{
+width:180px;
+height:180px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+}
+/* ===== ULTRA 4D LOADER ===== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#050816;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-container{
+    position:relative;
+    width:350px;
+    height:350px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1500px;
+}
+
+.loader-logo{
+    width:180px;
+    z-index:5;
+    animation:
+    logoRotate 2.5s linear infinite,
+    logoFloat 2s ease-in-out infinite,
+    pulseGlow 1.5s infinite alternate;
+    transform-style:preserve-3d;
+}
+
+/* 3D Logo Rotation */
+
+@keyframes logoRotate{
+
+    0%{
+        transform:
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        rotateX(25deg)
+        rotateY(180deg)
+        scale(1.15);
+    }
+
+    100%{
+        transform:
+        rotateX(0deg)
+        rotateY(360deg)
+        scale(1);
+    }
+}
+
+/* Floating */
+
+@keyframes logoFloat{
+    0%,100%{margin-top:0;}
+    50%{margin-top:-25px;}
+}
+
+/* Glow */
+
+@keyframes pulseGlow{
+    from{
+        filter:
+        drop-shadow(0 0 20px #22c55e)
+        drop-shadow(0 0 50px #22c55e);
+    }
+    to{
+        filter:
+        drop-shadow(0 0 60px #22c55e)
+        drop-shadow(0 0 120px #22c55e);
+    }
+}
+
+/* Energy Rings */
+
+.energy-ring{
+    position:absolute;
+    width:280px;
+    height:280px;
+    border:4px solid #22c55e;
+    border-radius:50%;
+    animation:spinRing 3s linear infinite;
+    box-shadow:
+    0 0 20px #22c55e,
+    0 0 50px #22c55e;
+}
+
+.ring2{
+    width:340px;
+    height:340px;
+    border-color:#00ffcc;
+    animation-direction:reverse;
+}
+
+@keyframes spinRing{
+    from{
+        transform:
+        rotateX(70deg)
+        rotateZ(0deg);
+    }
+    to{
+        transform:
+        rotateX(70deg)
+        rotateZ(360deg);
+    }
+}
+
+/* Particles */
+
+.particle{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:#22c55e;
+    border-radius:50%;
+    box-shadow:0 0 20px #22c55e;
+}
+
+.p1{animation:orbit1 2s linear infinite;}
+.p2{animation:orbit2 3s linear infinite;}
+.p3{animation:orbit3 4s linear infinite;}
+.p4{animation:orbit4 5s linear infinite;}
+
+@keyframes orbit1{
+    from{transform:rotate(0deg) translateX(120px);}
+    to{transform:rotate(360deg) translateX(120px);}
+}
+
+@keyframes orbit2{
+    from{transform:rotate(0deg) translateY(130px);}
+    to{transform:rotate(-360deg) translateY(130px);}
+}
+
+@keyframes orbit3{
+    from{transform:rotate(0deg) translateX(-140px);}
+    to{transform:rotate(360deg) translateX(-140px);}
+}
+
+@keyframes orbit4{
+    from{transform:rotate(0deg) translateY(-150px);}
+    to{transform:rotate(-360deg) translateY(-150px);}
+}
+
+.loader-hidden{
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+</style>
+</head>
+
+<body>
+<!-- 3D LOADER -->
+<div id="loader">
+    <img src="loader.png" alt="Loading Logo" class="loader-logo">
+</div>
+
+<header>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#gallery">Gallery</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<img src="richard.jpeg" alt="Richard">
+
+<h1>Richard P</h1>
+
+<p>HR Executive | Payroll | Compliance | HR Operations</p>
+
+<a href="RICHARD ATS_Resume.pdf" download class="btn">
+📄 Download Resume
+</a>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+Detail-oriented HR professional with experience in HR Operations, Recruitment, Payroll Coordination, Employee Lifecycle Management, Statutory Compliance and Employee Engagement.
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Payroll Processing</div>
+<div class="skill">Recruitment</div>
+<div class="skill">EPF & ESIC</div>
+<div class="skill">Labour Law Compliance</div>
+<div class="skill">HR Operations</div>
+<div class="skill">Advanced Excel</div>
+<div class="skill">HR Analytics</div>
+<div class="skill">Employee Relations</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="card">
+<h3>CR Garments Export LLP</h3>
+<p>HR Executive – Payroll</p>
+</div>
+
+<br>
+
+<div class="card">
+<h3>Pride Premier Chennai</h3>
+<p>HR Coordinator</p>
+</div>
+
+<br>
+
+<div class="card">
+<h3>Madura Coats Pvt Ltd</h3>
+<p>HR Assistant – Time Office & IRD</p>
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2 class="section-title">My Workplace Gallery</h2>
+
+<div class="gallery">
+
+<div class="gallery-card">
+<img src="meeting room.jpeg" alt="Meeting Room">
+<h3 style="margin-top:15px;">Company Meeting Room</h3>
+</div>
+
+<div class="gallery-card">
+<img src="my orentaions.jpeg" alt="Orientation">
+<h3 style="margin-top:15px;">Employee Orientation Program</h3>
+</div>
+
+<div class="gallery-card">
+<img src="my table.jpeg" alt="Work Table">
+<h3 style="margin-top:15px;">My Work Station</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="card">
+MBA – HR & Operations
+</div>
+
+<br>
+
+<div class="card">
+B.Com (Computer Applications)
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="card contact-links">
+
+📞 +91 9750329518
+
+<br><br>
+
+📧 prichardhr@gmail.com
+
+<br><br>
+
+<a href="https://www.linkedin.com/in/richard-p-40b248361/" target="_blank">
+LinkedIn Profile
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Richard P Portfolio | All Rights Reserved
+</footer>
+<script>
+
+/* LOADER */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document
+        .getElementById("loader")
+        .classList
+        .add("loader-hidden");
+
+    }, 2500);
+
+});
+
+</script>
+
+<script>
+
+/* Mouse 3D Effect */
+
+const cards=document.querySelectorAll('.card,.gallery-card,.skill');
+
+cards.forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+
+const rotateY=((x/rect.width)-0.5)*20;
+const rotateX=((y/rect.height)-0.5)*-20;
+
+card.style.transform=
+`perspective(1000px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)
+translateY(-10px)`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.transform=
+'perspective(1000px) rotateX(0) rotateY(0)';
+
+});
+
+});
+
+</script>
+
+</body>
+<script>
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.classList.add("loader-hidden");
+
+},2500);
+
+});
+</script>
+</body>
+</html>
